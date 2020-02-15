@@ -1,5 +1,10 @@
 .characters {
+  margin: auto;
   width: auto;
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .character {
