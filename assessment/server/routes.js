@@ -26,8 +26,9 @@ function fetchCharactersFromSWAPI(pageNumber) {
   // expect a promise  -- they use .then()
   // therefore, we simply return the call to superagent which will
   // resolve with any data found
+  let url = `https://swapi.co/api/people/?page=${pageNumber}`;
 
-  return superagent.get(`https://swapi.co/api/people/?page=${pageNumber}`)
+  return superagent.get(url)
     .then(response => {
       // After we get the data from the remote API, go to the
       // Database and add the number of "likes" for each character

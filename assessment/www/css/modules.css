@@ -39,3 +39,14 @@
   background-color: #1B263B;
   color: #E0E1DD;
 }
+
+#more {
+  display: block;
+  margin: 1em auto;
+  align-self: center;
+}
+
+#more:hover {
+  background-color: #1B263B;
+  color: #E0E1DD;
+}
