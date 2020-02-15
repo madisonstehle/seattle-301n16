@@ -1,5 +1,10 @@
 .characters {
+  margin: auto;
   width: auto;
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .character {
@@ -10,7 +15,8 @@
 }
 
 .character header {
-  background: #ddd;
+  color: #E0E1DD;
+  background: #415A77;
   line-height: 1.5em;
   text-align: center;
 }
@@ -27,4 +33,9 @@
   display: block;
   margin: .5em auto;
   width: 50%;
+}
+
+.character button:hover {
+  background-color: #1B263B;
+  color: #E0E1DD;
 }
