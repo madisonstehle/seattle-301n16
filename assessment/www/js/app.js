@@ -26,18 +26,13 @@ function getCharacters(){
     });
 }
 
-function renderMoreCharacters(characterInfo) {
-  console.log('character info: ', characterInfo);
-  console.log(characterInfo.data.results[0]);
+// Wasn't able to get the styling done for the new Handlebars renderings
 
+function renderMoreCharacters(characterInfo) {
   let templateCode = $('#character_template').html();
   let render = Handlebars.compile(templateCode);
 
   let HTMLCode = render(characterInfo.data);
 
-  console.log('HTML code: ', HTMLCode);
-
   $('div.handlebarsHolder').html(HTMLCode);
-
-  console.log('spot in the code to put it', $('div.handlebarsHolder'));
 }

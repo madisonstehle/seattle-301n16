@@ -40,16 +40,16 @@
 }
 
 #newCharacters {
-  margin: auto;
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* outline: plum solid 2px; */
+  align-items: center;
+  margin: auto;
+  width: 100%;
 }
 
 .handlebarsHolder {
-  /* outline: black 5x solid; */
+  outline: black 5x solid;
 }
 
 #more {
