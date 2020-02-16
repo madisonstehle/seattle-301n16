@@ -1,16 +1,38 @@
 'use strict';
 
-let likeButtons = $('button');
+$('button.like').on('click', likeMe);
+$('button#more').on('click', getCharacters);
 
-for (let i = 0; i < likeButtons.length; i++) {
-  likeButtons[i].addEventListener('click', likeMe);
+function likeMe(){
+  let character = $(this).parent()[0];
+  let counter = $(character).find('span')[0];
+  let count = parseInt($(counter).text());
+
+  count++;
+
+  $(counter).text(count);
 }
 
-function likeMe(e) {
-  let character = e.target.parentNode;
-  // let character = $(this).parent();
-  let counter = character.getElementsByTagName('span')[0];
-  let count = parseInt(counter.textContent);
-  count++;
-  counter.textContent = count;
+function getCharacters(){
+  let url = 'http://localhost:3000/characters';
+  console.log(url);
+
+  $.ajax(url, {
+    method: 'get',
+    dataType: 'json'
+  })
+    .then( data => {
+      renderMoreCharacters(data);
+    });
+}
+
+// Wasn't able to get the styling done for the new Handlebars renderings
+
+function renderMoreCharacters(characterInfo) {
+  let templateCode = $('#character_template').html();
+  let render = Handlebars.compile(templateCode);
+
+  let HTMLCode = render(characterInfo.data);
+
+  $('div.handlebarsHolder').html(HTMLCode);
 }
