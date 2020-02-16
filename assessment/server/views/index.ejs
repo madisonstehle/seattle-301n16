@@ -7,13 +7,20 @@
 
   <script id="character_template" type= "text/x-handlebars-template">
 
-    <div class="character">
-      <header>
-        <h2>{{results.name}}</h2>
-      </header>
-      <span class="likeCount">{{results.likes}}</span>
-      <button class="like">Upvote</button>
-    </div>
+    
+    {{#each results}}
+      <div class="character"> 
+        <header>
+          <h2>{{name}}</h2>
+        </header>
+        {{#if likes}}
+        <span class="likeCount">{{likes}}</span>
+        {{else}}
+        <span class="likeCount">0</span>
+        {{/if}}
+        <button class="like">Upvote</button>
+      </div>
+    {{/each}}
 
   </script>
 
@@ -41,6 +48,10 @@
     </section>
 
   </main>
+
+    <section id="newCharacters">
+      <div class="handlebarsHolder"></div> 
+    </section>
 
     <button id="more">Get More Characters</button>
 

@@ -1,8 +1,7 @@
 .characters {
   margin: auto;
-  width: auto;
+  width: 100%;
   display: flex;
-  /* flex-direction: column; */
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -38,6 +37,19 @@
 .character button:hover {
   background-color: #1B263B;
   color: #E0E1DD;
+}
+
+#newCharacters {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* outline: plum solid 2px; */
+}
+
+.handlebarsHolder {
+  /* outline: black 5x solid; */
 }
 
 #more {

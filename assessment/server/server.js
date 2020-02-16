@@ -27,7 +27,7 @@ const defaults = require('./middleware.js');
 
 // The handlers for the routes that this API will actually use
 const routes = require('./routes.js');
-
+const moreCharacters = require('./moreCharacters.js');
 
 // Anything static (css or browser-side javascript) should go here
 app.use(express.static('./www'));
@@ -40,6 +40,9 @@ app.set('views', './server/views');
 // Route Handler Definitions. Each express method and route should call
 // a method that the routes.js file exported
 app.get('/', routes.homePageHandler);
+
+// Route for Characters
+app.get('/characters', moreCharacters.moreCharactersHandler);
 
 // Wire in the defaults we required above.
 app.use('*', defaults.notFoundHandler);
